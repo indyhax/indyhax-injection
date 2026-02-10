@@ -30,7 +30,7 @@ Example payload (one of many):
   </style>
 </head>
 <body>
-  <h1>IndyHAX CTF â€” Fuzzing</h1>
+  <h1>IndyHAX CTF - Fuzzing</h1>
   <div class="card">
     <p class="muted">Thereâ€™s no trick here. Justâ€¦ find whatâ€™s not linked.</p>
     <p>Hint: Use a directory/content discovery tool (ffuf/dirb/gobuster) against this site.</p>
