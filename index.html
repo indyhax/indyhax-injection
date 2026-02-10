@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>IndyHAX â€¢ Injection</title>
+  <style>
+    body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px}
+    .card{border:1px solid #ddd;border-radius:12px;padding:18px;background:#fff}
+    input{padding:10px 12px;border-radius:10px;border:1px solid #ddd;width:min(520px,100%)}
+    button{padding:10px 12px;border-radius:10px;border:1px solid #111;background:#111;color:#fff;margin-left:6px}
+    .muted{color:#666}
+    #out{margin-top:14px;padding:12px;border-radius:10px;background:#f6f8fa;border:1px solid #e5e7eb;min-height:48px}
+  </style>
+</head>
+<body>
+  <h1>IndyHAX CTF â€” Injection</h1>
+  <div class="card" data-flag="SU5EWUhBWHtkb21feHNzX2lzX3N0aWxsX3hzc30=">
+    <p class="muted">This page is "helpfully" rendering your input as HTML.</p>
+
+    <p>
+      <input id="q" placeholder="Try: <b>hello</b>" />
+      <button id="go">Render</button>
+    </p>
+
+    <div class="muted">Hint: if you can run JS, you can read attributes.</div>
+    <div id="out"></div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(location.search);
+    const out = document.querySelector('#out');
+    const q = document.querySelector('#q');
+
+    function render(v){
+      // Intentionally vulnerable: DOM injection
+      out.innerHTML = v;
+    }
+
+    document.querySelector('#go').addEventListener('click', () => {
+      render(q.value);
+      history.replaceState(null, '', '?q=' + encodeURIComponent(q.value));
+    });
+
+    if (params.has('q')) {
+      q.value = params.get('q');
+      render(q.value);
+    }
+
+    console.log('Goal: reveal the hidden flag stored on the page.');
+  </script>
+</body>
+</html>
