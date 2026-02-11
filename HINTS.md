@@ -32,7 +32,7 @@ Example payload (one of many):
 <body>
   <h1>IndyHAX CTF - Fuzzing</h1>
   <div class="card">
-    <p class="muted">Thereâ€™s no trick here. Justâ€¦ find whatâ€™s not linked.</p>
+    <p class="muted">There's no trick here. Just... find what's not linked.</p>
     <p>Hint: Use a directory/content discovery tool (ffuf/dirb/gobuster) against this site.</p>
     <p class="muted">Start with common words like: <code>backup</code>, <code>admin</code>, <code>secret</code>, <code>old</code>, <code>dev</code>.</p>
   </div>
