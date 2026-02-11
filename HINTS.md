@@ -1,4 +1,4 @@
-﻿## Player hints (optional)
+## Player hints (optional)
 
 - The page reflects input using innerHTML.
 - Try injecting an element with an event handler.
@@ -21,7 +21,7 @@ Example payload (one of many):
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>IndyHAX â€¢ Fuzzing</title>
+  <title>IndyHAX - Fuzzing</title>
   <style>
     body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px}
     .card{border:1px solid #ddd;border-radius:12px;padding:18px;background:#fff}
